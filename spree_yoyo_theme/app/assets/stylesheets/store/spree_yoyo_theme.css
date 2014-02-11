@@ -1,3 +1,6 @@
 /*
- *= require store/spree_frontend
+ *= require store/spree_frontend 
 */
+
+@import url('_footer.css');
+@import url('_header.css');
