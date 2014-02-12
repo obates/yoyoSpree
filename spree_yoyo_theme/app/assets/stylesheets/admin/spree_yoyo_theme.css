@@ -49,3 +49,12 @@ input[type="button"]:hover,
   #sub-menu li.selected a:after, #sub-menu li a:hover:after, #sub-menu #admin-menu li.selected a:after, #admin-menu #sub-menu li.selected a:after {
     border-top: 5px solid #B3B3B3;
 }
+
+#sidebar .sidebar-title {
+color: #949494;
+}
+nav.menu ul li.active a {
+color: #949494;
+border-left-width: 0;
+border-bottom-color: #949494;
+	}
