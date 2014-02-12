@@ -10,21 +10,71 @@
 	</div>
 </div>
 <div class="col-md-6">
-	<div id="existing-customer">
+	<% if spree_current_user %>
+	<div id="current-user">
+		<h3><%= Spree.t(:my_orders) %></h3>
+		<% if @orders.present? %>
+		<table class="order-summary">
+			<thead>
+				<tr>
+					<th class="order-number"><%= Spree.t(:order_number) %></th>
+					<th class="order-date"><%= Spree.t(:date) %></th>
+					<th class="order-status"><%= Spree.t(:status) %></th>
+					<th class="order-payment-state"><%= Spree.t(:payment_state) %></th>
+					<th class="order-shipment-state"><%= Spree.t(:shipment_state) %></th>
+					<th class="order-total"><%= Spree.t(:total) %></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @orders.each do |order| %>
+				<tr class="<%= cycle('even', 'odd') %>">
+					<td class="order-number"><%= link_to order.number, order_url(order) %></td>
+					<td class="order-date"><%= l order.completed_at.to_date %></td>
+					<td class="order-status"><%= Spree.t("order_state.#{order.state}").titleize %></td>
+					<td class="order-payment-state"><%= Spree.t("payment_states.#{order.payment_state}").titleize if order.payment_state %></td>
+					<td class="order-shipment-state"><%= Spree.t("shipment_states.#{order.shipment_state}").titleize if order.shipment_state %></td>
+					<td class="order-total"><%= order.display_total %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<% else %>
+		<p><%= Spree.t(:you_have_no_orders_yet) %></p>
+		<% end %>
+	</div>
+	<% else %>
+	<div id="login">
 		<h2>Login to see previous orders:</h2>
 		<% if flash[:alert] %>
 		<div class="flash errors"><%= flash[:alert] %></div>
 		<% end %>
 
-		<% @body_id = 'login' %>
-		<div id="existing-customer">
-			<div data-hook="login">
-				<%= render :partial => 'spree/shared/login' %>
-				<%= Spree.t(:or) %>
-				<%= link_to Spree.t(:create_a_new_account), spree.signup_path %> |
-				<%= link_to Spree.t(:forgot_password), spree.recover_password_path %>
+		<div data-hook="login">
+			<%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path, :html => {:class => 'form-horizontal'} do |f| %>
+			<div class="form-group">
+				<%= f.label :email, Spree.t(:email),:class => "col-sm-4" %>
+				<div class="col-sm-8">
+					<%= f.email_field :email, :class => "form-control", :tabindex => 1 %>
+				</div>
 			</div>
+			<div class="form-group">
+				<%= f.label :password, Spree.t(:password), :class => "col-sm-4"%>
+				<div class="col-sm-8">
+					<%= f.password_field :password, :class => "form-control", :tabindex => 2 %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-4">
+					<%= f.check_box :remember_me %>
+					<%= f.label :remember_me, Spree.t(:remember_me),:class => "pull-right" %>
+				</div>
+				<div class="col-sm-6">
+					<%= f.submit :Login, :class => 'btn btn-default', :tabindex => 3 %>
+				</div>
+			</div>
+			<% end %>
 		</div>
-		<div data-hook="login_extras"></div>
 	</div>
+	<% end %>
 </div>
