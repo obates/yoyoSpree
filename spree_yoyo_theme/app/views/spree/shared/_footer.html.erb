@@ -1,1 +1,58 @@
-<p class="footer"> new footer </p>
+<div class="footer">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="footerInside">
+        <h3>About</h3>
+
+Gourmet hamburger bar with a difference, serving lunch and evening meals. 12pm till late. 
+
+        <h3 class="footerLogo">YoYo Burger</h3>
+
+        <p> 0117 930 4353</p>
+        <p>6 Byron Pl, Avon BS8 1JT</p>
+        <p> hello@yoyoburger.co.uk</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="footerInside">
+        <h3>Connect</h3>
+
+        <div class="social-icons">
+          <ul>
+       
+            <%= link_to image_tag("spree/yoyo/facebookLogo.png"), "facebook.com" %>
+            <%= link_to image_tag("spree/yoyo/twitterLogo.png"), "twitter.com" %>
+            <%= link_to image_tag("spree/yoyo/googleLogo.png"), "https://www.google.com" %>
+          
+          </ul>
+        </div>
+
+        <div class="gmaps">
+
+          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3a3922x9T1CZwTmREE6Nc51k2lGZGtrE&sensor=false"></script>
+          <script type="text/javascript" src="http://www.map-generator.org/map/iframejs/422ec153-b462-4aea-93dd-05cf1ab57b88?key=AIzaSyA3a3922x9T1CZwTmREE6Nc51k2lGZGtrE&width=300px&height=150px"></script>
+          <div id ="mapid-422ec153-b462-4aea-93dd-05cf1ab57b88"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="footerInside">
+        <h3>Newsletter</h3>
+
+        <form class="navbar-form" role="search">
+            <div class="form-group search-inner">
+              <input type="text" class="form-control" placeholder="Email">
+            </div>
+
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottomFooter">
+  <p>Copyright © Built by Team Nocturnal. All rights reserved.</p>
+  <p><a href=""> Read the boring legal stuff </a></p>
+</div>

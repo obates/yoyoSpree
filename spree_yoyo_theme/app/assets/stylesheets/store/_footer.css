@@ -1,4 +1,117 @@
+
+/* footer */
+
+
+
 .footer
 {
-	font-size: 100px;
+  border-bottom:1px solid #6A6A65;
+  h3
+  {
+    font-family: 'ClassicRoundMedium';
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .footerLogo
+  {
+    text-align: left;
+    color:#EE6557;
+    margin-left:25px;
+  }
+
+  .footerInside
+  {
+    border-top:1px solid #6A6A65;
+
+    .social-icons {
+      list-style-type: none!important;
+      padding-top:10px;
+      height:55px;
+      width:100%;
+    }
+    .social-icons li{
+      float: left!important;
+      margin-right: 2px!important;
+      margin-bottom: 2px!important;
+      padding: 0px!important;
+      display: inline!important;
+      width: auto!important;
+      border-radius: 50%;
+
+    }     
+    .social-icons li a {
+      -moz-transition: all 1s ease 0s;
+      display: block!important;
+      float: left!important;
+      height: 100%!important;
+      margin: 0!important;
+      padding: 0!important;
+      width: 40px!important;
+      height: 40px!important;
+      text-indent: -9999px!important;
+    }
+    .social-icons li a:hover {
+      background-position: 0 -40px!important;
+      border-radius: 50%;
+    }
+    .social-icons li a {
+      background-color:transparent;
+    }
+
+    .social-icons li.facebookFooter a {
+      background: image-url('spree/yoyo/facebook.png') no-repeat 0 0;
+    }
+    .social-icons li.facebookFooter a:hover {
+      background-color: #3b5998;
+    }
+
+    .social-icons li.googleplusFooter a {
+      background: image-url("googleplus.png") no-repeat 0 0;
+    }
+    .social-icons li.googleplusFooter a:hover {
+      background-color: #dd4b39;
+    }
+    .social-icons li.twitterFooter a {
+      background: image-url("twitter.png") no-repeat 0 0;
+    }
+    .social-icons li.twitterFooter a:hover {
+      background-color: #48c4d2;
+    }
+
+    .gmaps
+    {
+      float:left;
+      padding-top:10px;
+      position:relative;
+
+      &:iframe
+      {
+        width:300px;
+        height:300px;
+        margin-top:-40px;
+        margin-left:-10px;
+      }
+      .mapaItem
+      {
+        overflow: hidden;
+        height:150px;
+      }
+
+    }
+
+  }
+
+}
+
+.bottomFooter
+{
+  padding-top:40px;
+
+  p
+  {
+    text-align: center;
+
+  }
+
 }
