@@ -1,5 +1,61 @@
 /*
  *= require admin/spree_backend
+<<<<<<< HEAD
+ */
+
+
+/* George Nash */
+
+
+ #header {
+ 	background-color: white;
+
+ }
+
+ a:hover:after, #admin-menu li.selected a:after {
+
+ 	border-top: 5px solid #FF6600;
+
+ }
+
+  a, a:hover, #admin-menu li.selected a, a:active, a:visited, a:focus {
+    outline: none; }
+  a:visited {
+    color: #5498da; }
+  a:focus {
+    color: #1C86EE; }
+  a:active {
+    color: #1C86EE; }
+  a:hover, #admin-menu li.selected a {
+    color: #1C86EE; }
+
+[data-hook="admin_login_navigation_bar"] ul {
+  text-align: right; }
+  [data-hook="admin_login_navigation_bar"] ul li {
+    padding: 5px 0 5px 10px;
+    text-align: right;
+    font-size: 90%;
+    color: #5498da;
+    margin-top: 8px; }
+    [data-hook="admin_login_navigation_bar"] ul li[data-hook="user-logged-in-as"] {
+      width: 50%;
+      color: #6788a2; }
+    [data-hook="admin_login_navigation_bar"] ul li:hover i {
+      color: #949494; }
+
+.select2-container-multi.select2-container-active .select2-choices, .select2-container-multi.select2-dropdown-open .select2-choices {
+  border-color: #FF6600 !important;
+  box-shadow: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.select2-container:hover .select2-choice, .select2-container.select2-container-active .select2-choice {
+  background-color: #FF6600 !important;
+  border-color: #FF6600 !important; }
+
+
+  /* George Nash End */
+=======
 */
 #header {
   background-color: white;
@@ -21,3 +77,32 @@ border-top: 5px solid #FF7D40;
 fieldset legend {
 color:#949494;
 }
+
+
+
+input[type="button"]:hover, 
+ input[type="submit"]:hover,
+ button:hover, .button:hover {
+ background-color: #228DF2;
+ }
+
+  #ui-datepicker-div table.ui-datepicker-calendar tbody td a:hover, #ui-datepicker-div table.ui-datepicker-calendar tbody td #admin-menu li.selected a, #admin-menu li.selected #ui-datepicker-div table.ui-datepicker-calendar tbody td a {
+        background-color: #FF7D40;
+        color: white;
+        border-color: #FF7D40; 
+    }
+      
+
+.pagination .page.current {
+      background-color: #949494;
+      border-radius: 3px;
+      color: white; }
+
+      #sub-menu {
+  background-color: #B3B3B3;
+  padding-bottom: 0; }
+
+  #sub-menu li.selected a:after, #sub-menu li a:hover:after, #sub-menu #admin-menu li.selected a:after, #admin-menu #sub-menu li.selected a:after {
+    border-top: 5px solid #B3B3B3;
+}
+>>>>>>> 2b1280a748623bb1dc5b0e75ae7bb9c16dedcc21
