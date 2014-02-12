@@ -7,6 +7,17 @@
 @import url('_index.css');
 @import url('bootstrap.min.css');
 
+body
+{
+  background-image:url("https://pbs.twimg.com/profile_background_images/378800000159816280/hX1Z8MuC.jpeg") !important;
+}
+
+.container
+{
+  width:960px;
+  background-color:#FFF;
+}
+
 h1 {
   font-size: 2em;
   letter-spacing: -2px;
