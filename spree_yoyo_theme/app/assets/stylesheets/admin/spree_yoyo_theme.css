@@ -1,3 +1,23 @@
 /*
  *= require admin/spree_backend
 */
+#header {
+  background-color: white;
+}
+#admin-menu {
+	background-color: #949494;
+
+}
+/*header color*/
+#admin-menu li a:hover, #admin-menu li.selected a {
+	background-color: #FF7D40;
+
+}
+/*header color border */
+#admin-menu li a:hover:after, #admin-menu li.selected a:after {
+border-top: 5px solid #FF7D40;
+}
+/*search text  */
+fieldset legend {
+color:#949494;
+}
