@@ -11,4 +11,6 @@ tmp
 nbproject
 pkg
 *.swp
+*.sqlite3
+*.log
 spec/dummy
