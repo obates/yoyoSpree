@@ -21,3 +21,31 @@ border-top: 5px solid #FF7D40;
 fieldset legend {
 color:#949494;
 }
+
+
+
+input[type="button"]:hover, 
+ input[type="submit"]:hover,
+ button:hover, .button:hover {
+ background-color: #228DF2;
+ }
+
+  #ui-datepicker-div table.ui-datepicker-calendar tbody td a:hover, #ui-datepicker-div table.ui-datepicker-calendar tbody td #admin-menu li.selected a, #admin-menu li.selected #ui-datepicker-div table.ui-datepicker-calendar tbody td a {
+        background-color: #FF7D40;
+        color: white;
+        border-color: #FF7D40; 
+    }
+      
+
+.pagination .page.current {
+      background-color: #949494;
+      border-radius: 3px;
+      color: white; }
+
+      #sub-menu {
+  background-color: #B3B3B3;
+  padding-bottom: 0; }
+
+  #sub-menu li.selected a:after, #sub-menu li a:hover:after, #sub-menu #admin-menu li.selected a:after, #admin-menu #sub-menu li.selected a:after {
+    border-top: 5px solid #B3B3B3;
+}
