@@ -1,5 +1,61 @@
 /*
  *= require admin/spree_backend
+<<<<<<< HEAD
+ */
+
+
+/* George Nash */
+
+
+ #header {
+ 	background-color: white;
+
+ }
+
+ a:hover:after, #admin-menu li.selected a:after {
+
+ 	border-top: 5px solid #FF6600;
+
+ }
+
+  a, a:hover, #admin-menu li.selected a, a:active, a:visited, a:focus {
+    outline: none; }
+  a:visited {
+    color: #5498da; }
+  a:focus {
+    color: #1C86EE; }
+  a:active {
+    color: #1C86EE; }
+  a:hover, #admin-menu li.selected a {
+    color: #1C86EE; }
+
+[data-hook="admin_login_navigation_bar"] ul {
+  text-align: right; }
+  [data-hook="admin_login_navigation_bar"] ul li {
+    padding: 5px 0 5px 10px;
+    text-align: right;
+    font-size: 90%;
+    color: #5498da;
+    margin-top: 8px; }
+    [data-hook="admin_login_navigation_bar"] ul li[data-hook="user-logged-in-as"] {
+      width: 50%;
+      color: #6788a2; }
+    [data-hook="admin_login_navigation_bar"] ul li:hover i {
+      color: #949494; }
+
+.select2-container-multi.select2-container-active .select2-choices, .select2-container-multi.select2-dropdown-open .select2-choices {
+  border-color: #FF6600 !important;
+  box-shadow: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.select2-container:hover .select2-choice, .select2-container.select2-container-active .select2-choice {
+  background-color: #FF6600 !important;
+  border-color: #FF6600 !important; }
+
+
+  /* George Nash End */
+=======
 */
 #header {
   background-color: white;
@@ -50,6 +106,7 @@ input[type="button"]:hover,
     border-top: 5px solid #B3B3B3;
 }
 
+
 #sidebar .sidebar-title {
 color: #949494;
 }
@@ -58,3 +115,4 @@ color: #949494;
 border-left-width: 0;
 border-bottom-color: #949494;
 	}
+

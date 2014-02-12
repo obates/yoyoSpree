@@ -1,0 +1,78 @@
+/* header */
+
+.headerStyle{
+  background-color: #FFF;
+  border-bottom:1px solid #6A6A65;
+  padding-bottom:15px;
+  padding-top:10px;
+  height:100%;
+  font-family: 'ClassicRoundMedium';
+
+
+  a:link,a:visited
+  {
+    color:#6A6A65;
+  }
+
+  a:hover
+  {
+    color:#EE6557 !important;
+  }
+}
+
+.brand
+{
+  padding-top:20px;
+}
+
+.headernav
+{
+
+}
+
+.topnav
+{
+  float:left;
+  width:100%;
+  font-size:0.9em;
+}
+
+.bottomnav
+{
+  float:left;
+  width:100%;
+  font-size:1.3em;
+
+  a:hover
+  {
+   color:#EE6557 !important;
+   border-bottom:1px solid #EE6557;
+
+ }
+
+ .activeLink
+ {
+  color:#EE6557 !important;
+}
+}
+
+.search-inner
+{
+  position:relative;
+
+  input
+  {
+    padding-right:30px;
+  }
+  a:link, a:visited
+  {
+    position:absolute;
+    right:0px;
+    padding:6px 25px;
+  }
+  a:hover
+  {
+    border:none !important;
+    text-decoration: none;
+  }
+}
