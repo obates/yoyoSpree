@@ -4,4 +4,26 @@
 
 @import url('_footer.css');
 @import url('_header.css');
+@import url('_index.css');
 @import url('bootstrap.min.css');
+
+h1 {
+  font-size: 2em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  
+  font-weight: normal;
+  color: #999;
+}
+
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}

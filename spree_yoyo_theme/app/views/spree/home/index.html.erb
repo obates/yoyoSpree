@@ -1,0 +1,30 @@
+<h1>Get started straight away:</h1>
+<div class="col-md-6">
+
+	<h2>Enter postcode to get started</h2>
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Postcode">
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-default">Continue</button>
+	</div>
+</div>
+<div class="col-md-6">
+	<div id="existing-customer">
+		<h2>Login to see previous orders:</h2>
+		<% if flash[:alert] %>
+		<div class="flash errors"><%= flash[:alert] %></div>
+		<% end %>
+
+		<% @body_id = 'login' %>
+		<div id="existing-customer">
+			<div data-hook="login">
+				<%= render :partial => 'spree/shared/login' %>
+				<%= Spree.t(:or) %>
+				<%= link_to Spree.t(:create_a_new_account), spree.signup_path %> |
+				<%= link_to Spree.t(:forgot_password), spree.recover_password_path %>
+			</div>
+		</div>
+		<div data-hook="login_extras"></div>
+	</div>
+</div>
