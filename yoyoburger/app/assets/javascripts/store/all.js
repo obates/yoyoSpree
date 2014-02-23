@@ -11,3 +11,4 @@
 
 //= require_tree .
 //= require store/spree_yoyo_theme
+//= require store/spree_address_book

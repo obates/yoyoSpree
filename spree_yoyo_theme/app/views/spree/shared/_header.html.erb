@@ -32,9 +32,9 @@
 					<div class="navbar-header">
 						<ul class="nav navbar-nav">
 							<li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
-							<li><a href="">Menu</a></li>
-							<li><a href="">About</a></li>
-							<li><a href="">Contact</a></li>
+							<li><%= link_to Spree.t(:products), spree.products_path %></li>
+							<li><%= link_to Spree.t(:about), "/about" %></li>
+							<li><%= link_to Spree.t(:contact), "/contact" %></li>
 							<li id="link-to-cart" data-hook><%= link_to_cart %></li>
 						</ul>
 					</div>

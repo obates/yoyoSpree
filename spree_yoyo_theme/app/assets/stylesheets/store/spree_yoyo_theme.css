@@ -9,13 +9,13 @@
 
 body
 {
-  background-image:url("https://pbs.twimg.com/profile_background_images/378800000159816280/hX1Z8MuC.jpeg") !important;
+  background-image:url("http://i397.photobucket.com/albums/pp54/batesie-boy/bg.png") !important;
 }
 
 .container
 {
-  width:960px;
-  background-color:#FFF;
+  width:1000px;
+  background-color:#EDEDED;
 }
 
 h1 {
@@ -31,7 +31,7 @@ h2 {
   margin-bottom: 30px;
   
   font-weight: normal;
-  color: #999;
+  color: #000;
 }
 
 .row{

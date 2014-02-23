@@ -10,7 +10,8 @@
 # Ignore the default SQLite database.
 *.sqlite3
 *.log
-
+/sprockets
+tmp/
 # Ignore all logfiles and tempfiles.
 
 .DS_Store
