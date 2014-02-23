@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/radar/better_spree_paypal_express.git
+  revision: 5db60e8626db4847dade460e6a91634f0d33ad15
+  branch: 2-1-stable
+  specs:
+    spree_paypal_express (2.0.3)
+      paypal-sdk-merchant (= 1.106.1)
+      spree_core (~> 2.1.1)
+
+GIT
   remote: git://github.com/romul/spree_address_book.git
   revision: 5f7b7c322e780422ae7252dfc2147774469d81cd
   branch: 2-1-stable
@@ -207,6 +216,11 @@ GEM
       mime-types
     paranoia (2.0.2)
       activerecord (~> 4.0)
+    paypal-sdk-core (0.2.7)
+      multi_json (~> 1.0)
+      xml-simple
+    paypal-sdk-merchant (1.106.1)
+      paypal-sdk-core (~> 0.2.3)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -280,6 +294,7 @@ GEM
       tzinfo
     warden (1.2.3)
       rack (>= 1.0)
+    xml-simple (1.1.3)
 
 PLATFORMS
   ruby
@@ -294,6 +309,7 @@ DEPENDENCIES
   spree!
   spree_address_book!
   spree_auth_devise!
+  spree_paypal_express!
   spree_static_content!
   spree_yoyo_theme!
   sqlite3
