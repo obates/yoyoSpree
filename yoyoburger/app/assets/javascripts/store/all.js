@@ -13,3 +13,4 @@
 //= require store/spree_yoyo_theme
 //= require store/spree_address_book
 //= require store/spree_paypal_express
+//= require jquery.rating
