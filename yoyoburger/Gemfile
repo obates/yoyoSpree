@@ -53,4 +53,4 @@ gem 'spree_paypal_express', :github => 'radar/better_spree_paypal_express', bran
 gem 'spree_reviews', github: 'spree/spree_reviews', branch: '2-1-stable'
 gem 'spree_recently_viewed', github: 'spree/spree_recently_viewed', branch: '2-1-stable'
 gem 'spree_loyalty_points', github: 'vinsol/spree-loyalty-points'
-gem 'spree_quick_cart', github: 'frankmt/spree_quick_cart'
+gem "spree_comments", github: 'spree/spree_comments', branch:'2-1-stable'
