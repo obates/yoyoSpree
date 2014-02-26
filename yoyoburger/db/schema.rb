@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223184615) do
+ActiveRecord::Schema.define(version: 20140226193269) do
 
   create_table "spree_activators", force: true do |t|
     t.string   "description"
@@ -194,6 +194,23 @@ ActiveRecord::Schema.define(version: 20140223184615) do
     t.datetime "updated_at"
   end
 
+  create_table "spree_loyalty_points_transactions", force: true do |t|
+    t.integer  "loyalty_points"
+    t.string   "type"
+    t.integer  "user_id",                    null: false
+    t.integer  "source_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "source_type"
+    t.integer  "balance",        default: 0, null: false
+    t.string   "comment"
+    t.string   "transaction_id"
+  end
+
+  add_index "spree_loyalty_points_transactions", ["source_type", "source_id"], name: "by_source"
+  add_index "spree_loyalty_points_transactions", ["type"], name: "index_spree_loyalty_points_transactions_on_type"
+  add_index "spree_loyalty_points_transactions", ["user_id"], name: "index_spree_loyalty_points_transactions_on_user_id"
+
   create_table "spree_option_types", force: true do |t|
     t.string   "name",         limit: 100
     t.string   "presentation", limit: 100
@@ -247,6 +264,7 @@ ActiveRecord::Schema.define(version: 20140223184615) do
     t.integer  "created_by_id"
     t.string   "channel",                                                  default: "spree"
     t.decimal  "tax_total",                       precision: 10, scale: 2, default: 0.0,     null: false
+    t.datetime "paid_at"
   end
 
   add_index "spree_orders", ["completed_at"], name: "index_spree_orders_on_completed_at"
@@ -446,12 +464,14 @@ ActiveRecord::Schema.define(version: 20140223184615) do
   create_table "spree_return_authorizations", force: true do |t|
     t.string   "number"
     t.string   "state"
-    t.decimal  "amount",            precision: 10, scale: 2, default: 0.0, null: false
+    t.decimal  "amount",                          precision: 10, scale: 2, default: 0.0, null: false
     t.integer  "order_id"
     t.text     "reason"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "stock_location_id"
+    t.integer  "loyalty_points",                                           default: 0,   null: false
+    t.string   "loyalty_points_transaction_type"
   end
 
   create_table "spree_reviews", force: true do |t|
@@ -711,6 +731,8 @@ ActiveRecord::Schema.define(version: 20140223184615) do
     t.datetime "updated_at"
     t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
+    t.integer  "loyalty_points_balance",             default: 0, null: false
+    t.integer  "lock_version",                       default: 0, null: false
   end
 
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true

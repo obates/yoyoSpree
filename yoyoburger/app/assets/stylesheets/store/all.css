@@ -12,4 +12,5 @@
  *= require store/spree_address_book
  *= require store/spree_paypal_express
  *= require store/spree_reviews
+ *= require store/spree_loyalty_points
 */

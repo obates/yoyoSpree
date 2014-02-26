@@ -12,3 +12,4 @@
 //= require_tree .
 //= require admin/spree_yoyo_theme
 //= require admin/spree_paypal_express
+//= require admin/spree_loyalty_points
