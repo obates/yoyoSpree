@@ -1,6 +1,5 @@
 /*
  *= require admin/spree_backend
-<<<<<<< HEAD
 */
 
 @import url('../store/bootstrap.min.css');
@@ -130,16 +129,22 @@
 
 .sidebar:before
 {
-  
+
 }
 
 #page-sub-menu nav ul
 {
-  line-height: 40px;
+  line-height: 5px;
   margin: 0 22px 0 12px;
   padding: 0;
   list-style: none outside none !important;
   color:#4C8FBD;
+  position:relative;
+}
+
+label
+{
+  margin-left: 5px !important;
 }
 
 #page-sub-menu nav ul li
