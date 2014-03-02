@@ -1,0 +1,12 @@
+<% if content_for?(:page_title) || content_for?(:page_actions) %>
+<% if content_for?(:page_title) %>
+    <h1 class="page-title <%= yield :page_title_classes %>"><%= yield :page_title %></h1>
+<% end %>
+
+<% if content_for?(:page_actions) %>
+<ul class="inline-menu pull-right">
+    <%= yield :page_actions %>
+</ul>
+
+<% end %>
+<% end %>

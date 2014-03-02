@@ -1,0 +1,86 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+<head data-hook="admin_inside_head">
+  <%= render :partial => 'spree/admin/shared/head' %>
+</head>
+
+<body class='admin'>
+  <div id='wrapper' data-hook>
+
+    <div id="progress">
+      <div class="wrapper">
+        <div id="spinner"></div>
+        <div class="progress-message"><%= Spree.t(:loading) %>...</div>
+      </div>
+    </div>
+
+    <%= render :partial => 'spree/admin/shared/header' %>
+
+    <div class="main-container container-fluid">
+      <a class="menu-toggler" id="menu-toggler" href="#">
+        <span class="menu-text"></span>
+      </a>
+      <%= render :partial => 'spree/admin/shared/menu' %>
+
+      <div class="main-content">
+        <%= render :partial => 'spree/admin/shared/sub_menu' %>
+        
+
+        <div class="page-content">
+          <div class="page-header position-relative">
+            <%= render :partial => 'spree/admin/shared/content_header' %>
+          </div><!--/.page-header-->
+
+          <%= render :partial => 'spree/admin/shared/sidebar' %>
+          <div class="row-fluid">
+            <div class="span12">
+              <!--PAGE CONTENT BEGINS-->
+
+              <% if flash[:error] %>
+              <div class="alert alert-block alert-error"><%= flash[:error] %></div>
+              <% end %>
+              <% if notice %>
+              <div class="alert alert-block"><%= notice %></div>
+              <% end %>
+              <% if flash[:success] %>
+              <div class="alert-success">
+                <i class="icon-ok green"></i>
+                <%= flash[:success] %>
+              </div>
+              <% end %>
+
+              <div class="space-6"></div>
+
+              <div class="row-fluid">
+
+                <div class="<%= 'with-sidebar ' if content_for?(:sidebar) %>" id="content" data-hook>
+                  <%= render :partial => 'spree/admin/shared/table_filter' %>
+
+                  <div class="<%= if content_for?(:sidebar) then 'twelve' else 'sixteen' end %> columns">
+                    <%= yield %>
+                  </div>
+                </div>
+
+              </div>
+              <!--PAGE CONTENT ENDS-->
+            </div><!--/.span-->
+          </div><!--/.row-fluid-->
+        </div><!--/.page-content-->
+
+
+      </div><!--/.main-content-->
+
+    </div>
+  </div>
+</body>
+
+
+
+    <!-- 
+    
+    
+ -->

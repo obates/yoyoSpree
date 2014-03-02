@@ -1,118 +1,284 @@
 /*
  *= require admin/spree_backend
 <<<<<<< HEAD
- */
+*/
 
+@import url('../store/bootstrap.min.css');
+@import url('ace.min.css');
+
+/* Logo Header */
+
+#login-nav li
+{
+  color:white;
+}
+
+#login-nav a:link, #login-nav a:visited
+{
+  color:white;
+  text-decoration: underline;
+}
+
+#login-nav a:hover
+{
+  color:#e1261c;
+}
+
+/* Logo Header End */
+
+/* Main Menu */
+
+.sidebar-shortcuts-large .btn-small
+{
+  border-width:3px;
+}
+
+.tab-with-icon
+{
+  border-width: 1px 0;
+}
+
+.tab-with-icon a
+{
+  text-align: left;
+  font-size: 16px !important;
+}
+
+.tab-with-icon a:hover
+{
+  background-color: #FFF !important;
+  color: #e1261c;
+  border-left:5px solid #e1261c;
+}
+
+.nav-list .selected a
+{
+  border-right:5px solid #e1261c;
+}
+
+
+/* Main Menu End */
+
+/* Sub Menu */
+
+#sub-menu-my
+{
+  background-color: #F5F5F5;
+  font-size:14px;
+}
+
+#sub-menu-my ul
+{
+  line-height: 40px;
+  margin: 0 22px 0 12px;
+  padding: 0;
+  list-style: none outside none;
+  color:#4C8FBD;
+}
+
+#sub-menu-my ul li
+{
+  display: inline-block;
+  padding-left:25px;
+}
+
+#sub-menu-my ul .selected
+{
+  text-decoration: underline;
+}
+
+#sub-menu-my ul li a:link,#sub-menu-my ul li a:visited
+{
+  color:#4C8FBD;
+}
+
+#sub-menu-my ul li a:hover
+{
+  text-decoration: underline;
+}
+
+/* Sub Menu End */
+
+/* Page Header */
+
+.page-header
+{
+  margin: 15px 0 15px !important;
+  padding-bottom:15px;
+}
+
+.page-title
+{
+  display:inline;
+}
+
+/* Page Header End */
+
+/*Page Sub Menu Start*/
+
+.menu .sidebar
+{
+  width:100% !important;
+  text-transform: none !important;
+}
+
+#page-sub-menu nav
+{
+  background-color: #F5F5F5;
+  font-size:14px;
+}
+
+.sidebar:before
+{
+  
+}
+
+#page-sub-menu nav ul
+{
+  line-height: 40px;
+  margin: 0 22px 0 12px;
+  padding: 0;
+  list-style: none outside none !important;
+  color:#4C8FBD;
+}
+
+#page-sub-menu nav ul li
+{
+  display: inline-block;
+  padding-left:25px;
+}
+
+#page-sub-menu nav ul li a
+{
+  text-transform: capitalize !important;
+}
+
+#page-sub-menu nav ul .active
+{
+  text-decoration: underline;
+}
+
+#page-sub-menu nav ul li a:link,#page-sub-menu nav ul li a:visited
+{
+  color:#4C8FBD;
+}
+
+#page-sub-menu nav ul li a:hover
+{
+  text-decoration: underline;
+}
+
+/*Page Sub Menu End*/
 
 /* George Nash */
 
 
- #header {
- 	background-color: white;
-
- }
-
- a:hover:after, #admin-menu li.selected a:after {
-
- 	border-top: 5px solid #FF6600;
-
- }
-
-  a, a:hover, #admin-menu li.selected a, a:active, a:visited, a:focus {
-    outline: none; }
-  a:visited {
-    color: #5498da; }
-  a:focus {
-    color: #1C86EE; }
-  a:active {
-    color: #1C86EE; }
-  a:hover, #admin-menu li.selected a {
-    color: #1C86EE; }
-
-[data-hook="admin_login_navigation_bar"] ul {
-  text-align: right; }
-  [data-hook="admin_login_navigation_bar"] ul li {
-    padding: 5px 0 5px 10px;
-    text-align: right;
-    font-size: 90%;
-    color: #5498da;
-    margin-top: 8px; }
-    [data-hook="admin_login_navigation_bar"] ul li[data-hook="user-logged-in-as"] {
-      width: 50%;
-      color: #6788a2; }
-    [data-hook="admin_login_navigation_bar"] ul li:hover i {
-      color: #949494; }
-
-.select2-container-multi.select2-container-active .select2-choices, .select2-container-multi.select2-dropdown-open .select2-choices {
-  border-color: #FF6600 !important;
-  box-shadow: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; }
-
-.select2-container:hover .select2-choice, .select2-container.select2-container-active .select2-choice {
-  background-color: #FF6600 !important;
-  border-color: #FF6600 !important; }
-
-
-  /* George Nash End */
-=======
-*/
 #header {
   background-color: white;
-}
-#admin-menu {
-	background-color: #949494;
 
 }
-/*header color*/
-#admin-menu li a:hover, #admin-menu li.selected a {
-	background-color: #FF7D40;
+
+a:hover:after, #admin-menu li.selected a:after {
+
+  border-top: 5px solid #FF6600;
 
 }
-/*header color border */
-#admin-menu li a:hover:after, #admin-menu li.selected a:after {
-border-top: 5px solid #FF7D40;
-}
-/*search text  */
-fieldset legend {
-color:#949494;
-}
+
+a, a:hover, #admin-menu li.selected a, a:active, a:visited, a:focus {
+  outline: none; }
+  a:visited {
+    color: #5498da; }
+    a:focus {
+      color: #1C86EE; }
+      a:active {
+        color: #1C86EE; }
+        a:hover, #admin-menu li.selected a {
+          color: #1C86EE; }
+
+          [data-hook="admin_login_navigation_bar"] ul {
+            text-align: right; }
+            [data-hook="admin_login_navigation_bar"] ul li {
+              padding: 5px 0 5px 10px;
+              text-align: right;
+              font-size: 90%;
+              color: #5498da;
+              margin-top: 8px; }
+              [data-hook="admin_login_navigation_bar"] ul li[data-hook="user-logged-in-as"] {
+                width: 50%;
+                color: #6788a2; }
+                [data-hook="admin_login_navigation_bar"] ul li:hover i {
+                  color: #949494; }
+
+                  .select2-container-multi.select2-container-active .select2-choices, .select2-container-multi.select2-dropdown-open .select2-choices {
+                    border-color: #FF6600 !important;
+                    box-shadow: none;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0; }
+
+                    .select2-container:hover .select2-choice, .select2-container.select2-container-active .select2-choice {
+                      background-color: #FF6600 !important;
+                      border-color: #FF6600 !important; }
+
+
+                      /* George Nash End */
+                      =======
+                      */
+                      #header {
+                        background-color: white;
+                      }
+                      #admin-menu {
+                       background-color: #949494;
+
+                     }
+                     /*header color*/
+                     #admin-menu li a:hover, #admin-menu li.selected a {
+                       background-color: #FF7D40;
+
+                     }
+                     /*header color border */
+                     #admin-menu li a:hover:after, #admin-menu li.selected a:after {
+                      border-top: 5px solid #FF7D40;
+                    }
+                    /*search text  */
+                    fieldset legend {
+                      color:#949494;
+                    }
 
 
 
-input[type="button"]:hover, 
- input[type="submit"]:hover,
- button:hover, .button:hover {
- background-color: #228DF2;
- }
+                    input[type="button"]:hover, 
+                    input[type="submit"]:hover,
+                    button:hover, .button:hover {
+                     background-color: #228DF2;
+                   }
 
-  #ui-datepicker-div table.ui-datepicker-calendar tbody td a:hover, #ui-datepicker-div table.ui-datepicker-calendar tbody td #admin-menu li.selected a, #admin-menu li.selected #ui-datepicker-div table.ui-datepicker-calendar tbody td a {
-        background-color: #FF7D40;
-        color: white;
-        border-color: #FF7D40; 
-    }
-      
-
-.pagination .page.current {
-      background-color: #949494;
-      border-radius: 3px;
-      color: white; }
-
-      #sub-menu {
-  background-color: #B3B3B3;
-  padding-bottom: 0; }
-
-  #sub-menu li.selected a:after, #sub-menu li a:hover:after, #sub-menu #admin-menu li.selected a:after, #admin-menu #sub-menu li.selected a:after {
-    border-top: 5px solid #B3B3B3;
-}
+                   #ui-datepicker-div table.ui-datepicker-calendar tbody td a:hover, #ui-datepicker-div table.ui-datepicker-calendar tbody td #admin-menu li.selected a, #admin-menu li.selected #ui-datepicker-div table.ui-datepicker-calendar tbody td a {
+                    background-color: #FF7D40;
+                    color: white;
+                    border-color: #FF7D40; 
+                  }
 
 
-#sidebar .sidebar-title {
-color: #949494;
-}
-nav.menu ul li.active a {
-color: #949494;
-border-left-width: 0;
-border-bottom-color: #949494;
-	}
+                  .pagination .page.current {
+                    background-color: #949494;
+                    border-radius: 3px;
+                    color: white; }
+
+                    #sub-menu {
+                      background-color: #B3B3B3;
+                      padding-bottom: 0; }
+
+                      #sub-menu li.selected a:after, #sub-menu li a:hover:after, #sub-menu #admin-menu li.selected a:after, #admin-menu #sub-menu li.selected a:after {
+                        border-top: 5px solid #B3B3B3;
+                      }
+
+
+                      #sidebar .sidebar-title {
+                        color: #949494;
+                      }
+                      nav.menu ul li.active a {
+                        color: #949494;
+                        border-left-width: 0;
+                        border-bottom-color: #949494;
+                      }
 

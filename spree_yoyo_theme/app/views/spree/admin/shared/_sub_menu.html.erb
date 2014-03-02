@@ -1,0 +1,7 @@
+<% if content_for?(:sub_menu) %>
+  <nav id="sub-menu-my" data-hook>
+    <div class="container">
+        <%= yield :sub_menu %>
+    </div>
+  </nav>
+<% end %>
