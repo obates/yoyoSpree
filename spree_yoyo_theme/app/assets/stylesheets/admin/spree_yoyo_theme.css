@@ -173,7 +173,20 @@ label
   text-decoration: underline;
 }
 
-/*Page Sub Menu End*/
+/* Page Sub Menu End*/
+
+/* Kitchen */
+
+table th, table td 
+{
+    padding: 2px 2px !important;
+    vertical-align: middle;
+    border-collapse: collapse;
+}
+
+
+
+/* Kitchen End */
 
 /* George Nash */
 
