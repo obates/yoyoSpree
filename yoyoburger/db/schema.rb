@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226202732) do
+ActiveRecord::Schema.define(version: 20140304232506) do
 
   create_table "spree_activators", force: true do |t|
     t.string   "description"
@@ -287,6 +287,7 @@ ActiveRecord::Schema.define(version: 20140226202732) do
     t.string   "channel",                                                  default: "spree"
     t.decimal  "tax_total",                       precision: 10, scale: 2, default: 0.0,     null: false
     t.datetime "paid_at"
+    t.integer  "order_progress",                                           default: 0,       null: false
   end
 
   add_index "spree_orders", ["completed_at"], name: "index_spree_orders_on_completed_at"

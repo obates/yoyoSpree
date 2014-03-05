@@ -1,0 +1,57 @@
+
+
+<tr data-time="<%=order.created_at.to_i %>" data-hook="admin_orders_index_rows" class="state-<%= order.state.downcase %> <%= cycle('odd', 'even') %> table-row">
+	<td class="expand-details"><span class="plus-minus"> + </span></td>
+	<td class="align-center expand-details"><%= link_to order.number, edit_admin_order_path(order) %></td>
+	<td class="align-center expand-details"><%= order.created_at.strftime("%I:%M %P") %></td>
+	<td class="align-center"><span class="state <%= order.payment_state %>"><%= link_to Spree.t("payment_states.#{order.payment_state}"), admin_order_payments_path(order) if order.payment_state %></span></td>
+	<% if Spree::Order.checkout_step_names.include?(:delivery) %>
+	<td class="align-center"><%= order.order_progress %></td>
+	<% end %>
+	<td class="align-center"><%= mail_to order.email %></td>
+	<td class="align-center"><%= order.display_total.to_html %></td>
+	<td class='actions align-center' data-hook="admin_orders_index_row_actions">
+
+
+		<%= link_to "Cooked", inc_progress_admin_kitchen_path(:id => order.id), method: :post, :remote => true %>
+
+
+	</td>
+
+</tr>
+
+<div>
+	<thread>
+		<tr style="display:none">
+			<th></th>
+			<th>Name</th>
+			<th>Size/Variants</th>
+			<th>Quantity</th>
+		</tr>
+	</thread>
+
+	<% order.line_items.each do |item| %>
+	<tr class="line-item" id="line-item-<%= item.id %>" style="display:none">
+		<td></td>
+		<td class="line-item-name">
+			<%= item.variant.product.name %>
+		</td>
+
+		<td class="line-item-variant">
+			<% if item.variant.option_values.empty? %>
+			Standard
+			<% else %>
+			<%= variant_options(item.variant) %>
+			<% end %>
+		</td>
+
+		<td class="line-item-qty-show align-center">
+			<%= item.quantity %>
+		</td>
+	</tr>
+	<% end %>
+</div>
+
+
+
+
