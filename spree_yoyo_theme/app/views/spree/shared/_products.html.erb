@@ -1,0 +1,90 @@
+<%
+paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+paginated_products ||= products
+%>
+
+<% content_for :head do %>
+<% if paginated_products.respond_to?(:num_pages) %>
+<%= rel_next_prev_link_tags paginated_products %>
+<% end %>
+<% end %>
+
+<% if products.empty? %>
+<%= Spree.t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+<h6 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h6>
+<% end %>
+
+<% if products.any? %>
+<ul id="products" class="inline product-listing" data-hook>
+	<% products.each do |product| %>
+	<li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", :name => "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+		<div class="product-image">
+			<%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+		</div>
+		<%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+
+		<row>
+			<div class="col-md-6">
+				<span class="price selling" itemprop="price"><%= display_price(product) %></span>
+			</div>
+			<div class="col-md-6">
+				-<%= text_field_tag 'quantity','0',class: 'cart_field',size: 1 %>
+
+				<% if product.variants_and_option_values(current_currency).any? %>
+				<a class="diag-open" href="#">+</a>
+				<% else %>
+				+
+				<% end %>
+			</div>
+		</row>
+
+		<% if product.variants_and_option_values(current_currency).any? %>
+		<div id="dialog-modal">
+			<div id="product-variants" class="columns five alpha">
+				<h6 class="product-section-title"><%= Spree.t(:variants) %></h6>
+				<ul>
+				<% product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
+					<li>
+						<%= radio_button_tag "products[#{product.id}]", variant.id, index == 0, 'data-price' => Spree::Money.new(variant.price, with_currency: true).to_s %>
+						<label for="<%= ['products', product.id, variant.id].join('_') %>">
+							<span class="variant-description">
+								<%= variant_options variant %>
+							</span>
+							<% if variant_price variant %>
+							<span class="price diff"><%= variant_price variant %></span>
+							<% end %>
+						</label>
+					</li>
+					<% end%>
+				</ul>
+			</div>
+
+			<p><a class="close-b pull-left" href="">Close</a> <a class="add-b pull-right">Add</p>
+		</div>
+		<% else %>
+
+		<% end %>
+	</li>
+	<% end %>
+	<% reset_cycle("classes") %>
+</ul>
+<% end %>
+
+<% if paginated_products.respond_to?(:num_pages) %>
+<%= paginate paginated_products %>
+<% end %>
+
+<script type='text/javascript'>
+	$(document).ready(function(){
+		$(".diag-open").click(function(e)
+		{
+			e.preventDefault();
+			$('#dialog-modal').toggle(300);
+		});
+		$(".close-b").click(function(e){
+			e.preventDefault();
+			$(this).parent().parent().toggle(300);
+		});
+	});
+</script>

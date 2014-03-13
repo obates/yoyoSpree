@@ -1,14 +1,14 @@
 /*
  *= require store/spree_frontend 
-*/
+ */
 
-@import url('_footer.css');
-@import url('_header.css');
-@import url('_index.css');
-@import url('bootstrap.min.css');
+ @import url('_footer.css');
+ @import url('_header.css');
+ @import url('_index.css');
+ @import url('bootstrap.min.css');
 
-body
-{
+ body
+ {
   background-image:url("http://i397.photobucket.com/albums/pp54/batesie-boy/bg.png") !important;
 }
 
@@ -37,4 +37,40 @@ h2 {
 .row{
 	margin-left: 0px;
 	margin-right: 0px;border-image-repeat: 
+}
+
+#products li .info
+{
+  font-size:16px !important;
+}
+#products li .price
+{
+  font-size:13px !important;
+}
+
+#products li .cart_field
+{
+  width:30px;
+  text-align: center;
+}
+
+#dialog-modal
+{
+  position:absolute;
+  display:none;
+  background-color: white;
+  z-index: 2;
+  border-radius: 15px;
+  box-shadow: 7px 7px 7px black;
+}
+
+#dialog-modal p
+{
+  width:85%;
+  margin:0px auto;
+}
+
+.diag-open
+{
+  display:inline !important;
 }
