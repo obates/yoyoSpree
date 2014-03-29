@@ -1,0 +1,13 @@
+<% if request.env['PATH_INFO'] == "/products" %>
+
+<aside id="sidebar" class="columns two" data-hook>
+  <%= yield :sidebar %>
+</aside>
+
+<% else %>
+
+<aside id="sidebar" class="columns four" data-hook>
+  <%= yield :sidebar %>
+</aside>
+
+<% end %>

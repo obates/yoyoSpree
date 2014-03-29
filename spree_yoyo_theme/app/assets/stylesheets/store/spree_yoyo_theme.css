@@ -5,33 +5,61 @@
  @import url('_footer.css');
  @import url('_header.css');
  @import url('_index.css');
+ @import url('_products.css');
  @import url('bootstrap.min.css');
 
- body
- {
-  background-image:url("http://i397.photobucket.com/albums/pp54/batesie-boy/bg.png") !important;
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+ @font-face {
+  font-family: 'corpid_heavyregular';
+  src: url('/assets/corpid-heavy-webfont.eot');
+  src: url('/assets/corpid-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/corpid-heavy-webfont.woff') format('woff'),
+  url('/assets/corpid-heavy-webfont.ttf') format('truetype'),
+  url('/assets/corpid-heavy-webfont.svg#corpid_heavyregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body
+{
+  font-family: 'Open Sans',sans-serif !important;
+  background-color: rgb(252,252,252);
+}
+
+#index
+{
+  background:url("http://s22.postimg.org/ei2mpsquo/image.jpg") repeat scroll 0 0 / cover  rgba(0, 0, 0, 0);
+  background-image: !important;
+  background-color: #D61F26;
 }
 
 .container
 {
-  width:1000px;
-  background-color:#EDEDED;
+  width:1004px;
+  /*background-color:#EDEDED;*/
 }
 
 h1 {
-  font-size: 2em;
-  letter-spacing: -2px;
+  font-size: 60px;
   margin-bottom: 30px;
-  text-align: left;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
 }
 
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
   
   font-weight: normal;
-  color: #000;
+  color: #FFFFFF;
+}
+
+h3
+{
+  color: #FFFFFF;
 }
 
 .row{

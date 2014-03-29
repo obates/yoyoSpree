@@ -1,0 +1,17 @@
+#taxonomies
+{
+	padding-left:15px;
+	width:100px !important;
+}
+
+#taxonomies h5
+{
+	color:#83828A;
+	border-bottom:1px solid #83828A !important;
+}
+
+#taxonomies ul
+{
+	list-style: none;
+	margin-left:15px;
+}

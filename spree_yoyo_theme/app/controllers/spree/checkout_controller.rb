@@ -73,13 +73,17 @@ module Spree
 			order_items = "Item  Size  Price"
 			size = ""
 
-			  @order.line_items.each do | item |
-
+		  	@order.line_items.each do | item |
 			  	price = item.price.to_s
 			  	lineItemID = item.id
-			  	size = Spree::OptionValue.find_by_option_type_id(Spree::ProductOptionType.find_by_product_id(Spree::Variant.find_by_id(Spree::LineItem.find_by_id(lineItemID).variant_id).product_id).option_type_id).presentation
-			
-					order_items = order_items + "\n" + item.variant.product.name + " " + size + " " + price
+
+			  	if Spree::OptionValue.find_by_option_type_id(Spree::ProductOptionType.find_by_product_id(Spree::Variant.find_by_id(Spree::LineItem.find_by_id(lineItemID).variant_id).product_id)) != nil
+			  		size = Spree::OptionValue.find_by_option_type_id(Spree::ProductOptionType.find_by_product_id(Spree::Variant.find_by_id(Spree::LineItem.find_by_id(lineItemID).variant_id).product_id).option_type_id).presentation
+			  	else
+			  		size = "Standard"
+			  	end
+
+				order_items = order_items + "\n" + item.variant.product.name + " " + size + " " + price
 			end
 			
 

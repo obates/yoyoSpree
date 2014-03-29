@@ -1,92 +1,99 @@
-<h1>Get started straight away:</h1>
-<div class="row">
-	<div class="col-md-6">
+<div class="container">
+	<h1 class="homeheader">Order Online Now</h1>
+	<div class="postcode">
+		<div class="row">
+			<div class="col-md-3">
+				<h2 class="pcheader">ENTER YOUR POSTCODE</h2>
+			</div>
 
-		<h2>Enter postcode to get started</h2>
-		<div class="form-group">
-			<%= form_for @postcode, url: {controller: "home", action: "checkPostcode"}, method: "post", class: "" do |f| %>
-				<%= f.text_field :postcode %>
-				<%= f.submit "Continue" %>
-
-			<% end %>
-		</div>
-
-	</div>
-	<div class="col-md-6">
-		<% if spree_current_user %>
-		<div id="current-user">
-			<h3><%= Spree.t(:my_orders) %></h3>
-			<% if @orders %>
-			<table class="order-summary">
-				<thead>
-					<tr>
-						<th class="order-number"><%= Spree.t(:order_number) %></th>
-						<th class="order-date"><%= Spree.t(:date) %></th>
-						<th class="order-total"><%= Spree.t(:total) %></th>
-					</tr>
-				</thead>
-				<tbody>
-					<% @orders.each do |order| %>
-					<tr class="<%= cycle('even', 'odd') %>">
-						<td class="order-number"><%= link_to order.number, order_url(order) %></td>
-						<td class="order-date"><%= l order.completed_at.to_date %></td>
-						<td class="order-total"><%= order.display_total %></td>
-					</tr>
+			<div class="col-md-9">
+				<div class="row">
+					<%= form_for @postcode, url: {controller: "home", action: "checkPostcode"}, method: "post" do |f| %>
+					<div class="col-md-8">
+						<%= f.text_field :postcode, class:"pcfield", placeholder:"e.g BS3 9AS"%>
+					</div>
+					<div class="col-md-4">
+						<%= f.submit "START ORDERING", class:"pcbutton" %>
+					</div>
 					<% end %>
-				</tbody>
-			</table>
-			<% else %>
-			<p><%= Spree.t(:you_have_no_orders_yet) %></p>
-			<% end %>
-		</div>
-		<% else %>
-		<div id="login">
-			<h2>Login to see previous orders:</h2>
-			<% if flash[:alert] %>
-			<div class="flash errors"><%= flash[:alert] %></div>
-			<% end %>
-
-			<div data-hook="login">
-				<%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path, :html => {:class => 'form-horizontal'} do |f| %>
-				<div class="form-group">
-					<%= f.label :email, Spree.t(:email),:class => "col-sm-4" %>
-					<div class="col-sm-8">
-						<%= f.email_field :email, :class => "form-control", :tabindex => 1 %>
-					</div>
 				</div>
-				<div class="form-group">
-					<%= f.label :password, Spree.t(:password), :class => "col-sm-4"%>
-					<div class="col-sm-8">
-						<%= f.password_field :password, :class => "form-control", :tabindex => 2 %>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="col-sm-4">
-						<%= f.check_box :remember_me %>
-						<%= f.label :remember_me, Spree.t(:remember_me),:class => "pull-right" %>
-					</div>
-					<div class="col-sm-6">
-						<%= f.submit :Login, :class => 'btn btn-default', :tabindex => 3 %>
-					</div>
-				</div>
-				<% end %>
 			</div>
 		</div>
+	</div>
+
+	<% if spree_current_user %>
+	<div class="recentorders">
+		<h3><%= Spree.t(:my_orders) %></h3>
+		<% if @orders %>
+		<table class="table">
+			<thead class="orderhead">
+				<tr>
+					<th class="">Date</th>
+					<th class=""></th>
+					<th class="">Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @orders.each do |order| %>
+				<tr class="orderhead">
+					<td class=""><%= order.completed_at.to_time %></td>
+					<td class=""></td>
+					<td class=""><%= order.display_total %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<% else %>
+		<p><%= Spree.t(:you_have_no_orders_yet) %></p>
 		<% end %>
 	</div>
-</div>
+	<% else %>
+	<div id="login">
+		<h3>Login to see previous orders:</h3>
+		<% if flash[:alert] %>
+		<div class="flash errors"><%= flash[:alert] %></div>
+		<% end %>
 
-<div class="row promotions">
-	<div class="col-md-4">
-		<h2>10% off first order with code 'first10'</h2>
+		<div data-hook="login">
+			<%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path, :html => {:class => 'form-horizontal'} do |f| %>
+			<div class="form-group">
+				<%= f.label :email, Spree.t(:email),:class => "col-sm-4" %>
+				<div class="col-sm-8">
+					<%= f.email_field :email, :class => "form-control", :tabindex => 1,placeholder:"hello@yoyoburger.co.uk" %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= f.label :password, Spree.t(:password), :class => "col-sm-4"%>
+				<div class="col-sm-8">
+					<%= f.password_field :password, :class => "form-control", :tabindex => 2,placeholder:"••••••••" %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-3 col-md-offset-4">
+					<%= f.submit :Login, :class => 'loginbtn', :tabindex => 3 %>
+				</div>
+				<div class="col-sm-4">
+					<%= f.check_box :remember_me %>
+					<%= f.label :remember_me, Spree.t(:remember_me),:class => "remember" %>
+				</div>
+			</div>
+			<% end %>
+		</div>
 	</div>
+	<% end %>
 
-	<div class="col-md-4">
-		<h2>30% off any order before 5pm</h2>
-	</div>
+	<div class="row promotions">
+		<div class="col-md-4">
+			<h2>10% off first order with code 'first10'</h2>
+		</div>
 
-	<div class="col-md-4">
-		<h2>Free delivery on any order over £10</h2>
+		<div class="col-md-4">
+			<h2>30% off any order before 5pm</h2>
+		</div>
+
+		<div class="col-md-4">
+			<h2>Free delivery on any order over £10</h2>
+		</div>
 	</div>
 </div>

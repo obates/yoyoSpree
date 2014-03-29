@@ -1,57 +1,74 @@
+<% if current_page?(root_url) %>
+
+<header>
+	<div class="container">
+		<header class="homepage-header">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-8">
+					<figure id="logo" class="columns six" data-hook><%= link_to image_tag("spree/yoyo/logo/logo.png"),spree.root_path %><br/></figure>
+					<div class="below-logo">
+						t: 0789191990
+					</div>
+				</div>
+
+				<div class="col-md-8">
+					<ul class="homepage-menu">
+						<li class="contact"> <a href="">CONTACT</a></li>
+
+						<% if spree_current_user %>
+						<li class="contact">WELCOME BACK</li>
+						<li class="contact">LOYALTY POINTS: <%= spree_current_user.loyalty_points_balance %></li>
+						<li class="join"><%= link_to Spree.t(:ACCOUNT), spree.account_path %></li>
+						<li class="signin"><%= link_to Spree.t(:LOGOUT), spree.logout_path %></li>
+
+						<% else %>
+						<li class="join"><a href="">JOIN</a></li>
+						<li class="signin"><a href=""><%= link_to "SIGN IN",spree.login_path %></a></li>
+						<% end %>
+					</ul>
+				</div>
+
+			</div>
+		</header>
+	</div>
+</header>
+
+<% else %>
+
 <header class="header">
-	<div class="row">
-		<div class="col-md-4 col-sm-4 col-xs-8">
-			<figure id="logo" class="columns six" data-hook><%= link_to image_tag("spree/yoyo/logo/logo.png"),spree.root_path %><br/></figure>  
-		</div>
-
-		<div class="col-md-8 col-sm-8 col-xs-5 headernav">
-			<div class="topnav">
-				<nav class="navbar-default pull-right">
-					<div class="navbar-header">
-						<ul class="nav navbar-nav">
-
-							<% if spree_current_user %>
-							<li class="navbar-text">Hi Name</li>
-							<%= link_to Spree.t(:logout), spree.logout_path %>
-							<%= link_to Spree.t(:my_account), spree.account_path %>
-
-							<% else %>
-
-							<li class="navbar-text">Hi! Please</li>
-							<%= link_to Spree.t(:login),spree.login_path %>
-
-							<% end %>
-
-						</ul>
-					</div>
-				</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-8">
+				<figure id="logo" class="columns six" data-hook><%= link_to image_tag("spree/yoyo/logo/small.png"),spree.root_path %><br/></figure>
 			</div>
+			<div class="col-md-8">
+				<div class="row nomargin">
+					<ul class="upper-menu">
+						<% if spree_current_user %>
+						<li class="contact">WELCOME BACK</li>
+						<li class="contact">LOYALTY POINTS: <%= spree_current_user.loyalty_points_balance %></li>
+						<li class="join"><%= link_to Spree.t(:ACCOUNT), spree.account_path %></li>
+						<li class="signin"><%= link_to Spree.t(:LOGOUT), spree.logout_path %></li>
 
-			<div class="bottomnav">
-				<nav class="navbar-default">
-					<div class="navbar-header">
-						<ul class="nav navbar-nav">
-							<li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
-							<li><%= link_to Spree.t(:products), spree.products_path %></li>
-							<li><%= link_to Spree.t(:about), "/about" %></li>
-							<li><%= link_to Spree.t(:contact), "/contact" %></li>
-							<li id="link-to-cart" data-hook><%= link_to_cart %></li>
-						</ul>
-					</div>
-
-
-					<form class="navbar-form pull-right" role="search">
-						<div class="form-group search-inner">
-							<%= render :partial => 'spree/shared/search' %>
-						</div>
-
-					</form>
-				</nav>
+						<% else %>
+						<li class="join"><a href="">JOIN</a></li>
+						<li class="signin"><a href=""><%= link_to "SIGN IN",spree.login_path %></a></li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="row nomargin">
+					<ul class="lower-menu">
+						<li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+						<li><%= link_to Spree.t(:menu), spree.products_path %></li>
+						<li><%= link_to Spree.t(:about), "/about" %></li>
+						<li><%= link_to Spree.t(:contact), "/contact" %></li>
+						<li id="link-to-cart" data-hook><%= link_to_cart %></li>
+					</ul>
+				</div>
 			</div>
-
-
-
 
 		</div>
 	</div>
 </header>
+
+<% end %>
