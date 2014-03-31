@@ -69,6 +69,7 @@ h3
 
 #products li .info
 {
+  height:50px !important;
   font-size:16px !important;
 }
 #products li .price
