@@ -212,6 +212,8 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     ffaker (1.23.0)
+    google_directions (0.1.6.2)
+      nokogiri (>= 1.4.1)
     highline (1.6.20)
     hike (1.2.3)
     httparty (0.13.0)
@@ -345,6 +347,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  google_directions
   jbuilder (~> 1.2)
   jquery-rails
   railroady

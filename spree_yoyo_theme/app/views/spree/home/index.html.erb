@@ -1,11 +1,13 @@
 <div class="container">
+		<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
 	<h1 class="homeheader">Order Online Now</h1>
 	<div class="postcode">
 		<div class="row">
 			<div class="col-md-3">
 				<h2 class="pcheader">ENTER YOUR POSTCODE</h2>
 			</div>
-
 			<div class="col-md-9">
 				<div class="row">
 					<%= form_for @postcode, url: {controller: "home", action: "checkPostcode"}, method: "post" do |f| %>
@@ -20,7 +22,6 @@
 			</div>
 		</div>
 	</div>
-
 	<% if spree_current_user %>
 	<div class="recentorders">
 		<h3><%= Spree.t(:my_orders) %></h3>
