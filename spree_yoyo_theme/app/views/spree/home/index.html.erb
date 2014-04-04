@@ -40,6 +40,15 @@
 					<td class=""><%= order.completed_at.to_time %></td>
 					<td class=""></td>
 					<td class=""><%= order.display_total %></td>
+					 <td class="repeat-order">
+			          <%= form_tag repeat_order_path(order.number), method: :post do %>
+			            <div class="fields">
+			              <%= button_tag :class => 'repeatbtn', :type => :submit do %>
+			                <%= Spree.t(:repeat_order) %>
+			              <% end %>
+			            </div>
+			          <% end %>
+        			</td>
 				</tr>
 				<% end %>
 			</tbody>
