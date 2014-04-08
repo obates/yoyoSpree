@@ -1,7 +1,7 @@
 module Spree
   class RepeatedOrdersController < Spree::StoreController
 
-    include Spree::SpreeRepeatedOrder::ControllerHelpers::RepeatedOrder
+    ##include Spree::SpreeRepeatedOrder::ControllerHelpers::RepeatedOrder
 
     before_filter :check_authorization
 
@@ -20,7 +20,14 @@ module Spree
       redirect_to(cart_path)
     end
 
-    private
+     def duplicate_order(past_order, new_order)
+      new_line_items = []
+      past_order.line_items.each do |line_item|
+        new_line_items << line_item.dup
+      end
+
+      new_order.line_items = new_line_items
+    end
 
     def check_authorization
       session[:access_token] ||= params[:token]

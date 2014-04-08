@@ -1,6 +1,6 @@
 <div class="container">
-		<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
+<% flash.each do |key, value| %>
+<%= content_tag :div, value, class: "flash #{key}" %>
 <% end %>
 	<h1 class="homeheader">Order Online Now</h1>
 	<div class="postcode">
@@ -29,17 +29,23 @@
 		<table class="table">
 			<thead class="orderhead">
 				<tr>
-					<th class="">Date</th>
+					<th class="order-date">
+					 <%= Spree.t(:order_date) %>
+					</th>
 					<th class=""></th>
-					<th class="">Total</th>
+					<th class="order-total">
+					<%= Spree.t(:total) %>
+					</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% @orders.each do |order| %>
 				<tr class="orderhead">
-					<td class=""><%= order.completed_at.to_time %></td>
-					<td class=""></td>
-					<td class=""><%= order.display_total %></td>
+					<td class="order-date"><%= order.completed_at.to_time %></td>
+					<td class="">
+					<%=order.number%>
+					</td>
+					<td class="order-total"><%= order.display_total %></td>
 					 <td class="repeat-order">
 			          <%= form_tag repeat_order_path(order.number), method: :post do %>
 			            <div class="fields">

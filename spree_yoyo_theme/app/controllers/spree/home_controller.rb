@@ -2,11 +2,14 @@ module Spree
   class HomeController < Spree::StoreController
     helper 'spree/products'
     respond_to :html
+    helper 'spree/orders'
 
     def index
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
-      @orders = Order.find_all_by_user_id(spree_current_user, :limit => 3)
+      
+      @orders = Order.order(completed_at: :desc).find_all_by_user_id(spree_current_user, :limit => 3)
+
       @postcode = ""
     end
 
